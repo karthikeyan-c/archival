@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  application:
+    name: ${APPLICATION_NAME}
+  profiles:
+    include: ${APPLICATION_INCLUDE}
+  threads:
+    virtual:
+      enabled: true
+application:
+  title: Ledger
+  type: transactions
+  version: v1
+  bankId: SG
+  bankCode: DBS
+  considerBusinessDate: false

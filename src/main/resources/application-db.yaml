@@ -1,0 +1,19 @@
+jasypt:
+  encryptor:
+    password: ${DB_KEY}
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: ${JPA_SHOW_SQL}
+    hibernate:
+      ddl-auto: update
+      show-sql: ${JPA_SHOW_SQL}
+    properties:
+      hibernate:
+        format_sql: true

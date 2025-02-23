@@ -1,0 +1,20 @@
+select 1;
+----create table test(id varchar);
+--insert into products.channel_table(bank_id,channel_id, account_channel_indicator, channel_description, channel_header_value, channel_host)
+--values('SG','ABP','ABSP','001','ABP','http://localhost') on conflict do nothing;
+--
+--insert into products.branch_table(bank_id,branch_code,branch_name,operating_currency) values('SG','0001','0001','SGD') on conflict do nothing;
+--
+--insert into accounts.account_static(account_id,bank_id,product_code,account_channel_indicator,account_channel_open_channel,account_channel_open_source,account_currency,account_name1,
+--account_name2,account_short_name,account_type,address_customer_id,address_type_ind,branch_of_account,checker_of_account,closed_on,
+--maker_of_account,opened_on,record_version,scheme_code,source_customer_id,source_customer_type_code,staff_indicator)
+--values('1','SG','010','PWEB','P','','SGD','Cus','Cus','short','1','S344','UPD','0001','',null,'','2021-09-01',0,'0016','S233','1','2') on conflict do nothing;
+--
+--insert into accounts.account_master (account_id,bank_id, product_code, del_flg,record_version)
+--values('1','SG','010','N',0) on conflict do nothing;
+--
+--insert into accounts.account_status (account_id,bank_id, product_code, account_closure_remarks,account_status,account_status_code,account_status_date,account_status_reason_code,record_version)
+--values ('1','SG','010',null,'ACTIVE',0,'2021-09-01',null,0) on conflict do nothing;
+--
+--insert into accounts.savings_account (account_id,bank_id,product_code,account_signal_string,passbook_control_number,resident_country_code)
+--values ('1','SG','010','KKKK',0,'000') on conflict do nothing;
