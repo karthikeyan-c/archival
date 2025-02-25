@@ -1,0 +1,41 @@
+{
+    "event": "TRANSACTION_EVENT",
+    "key": "ACCT1",
+    "fileName": "4.xlsx",
+    "fromDate": "2025-02-23",
+    "toDate": "2025-02-24",
+    "tableList": {
+        "HTD": {
+            "fieldList": [
+                {
+                    "fieldName": "account_id"
+                },
+                {
+                    "fieldName": "tran_id"
+                },
+                {
+                    "fieldName": "tran_date"
+                },
+                {
+                    "fieldName": "tran_amt"
+                }
+            ]
+        },
+        "HTH": {
+            "fieldList": [
+                {
+                    "fieldName": "account_id"
+                },
+                {
+                    "fieldName": "tran_id"
+                },
+                {
+                    "fieldName": "tran_date"
+                },
+                {
+                    "fieldName": "channel_id"
+                }
+            ]
+        }
+    }
+}
