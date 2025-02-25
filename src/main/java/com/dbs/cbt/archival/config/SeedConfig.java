@@ -64,14 +64,14 @@ public class SeedConfig {
                                         .build(),
                                 TableConfig.builder()
                                         .tableConfigKey(TableConfigKey.builder()
-                                                .tableEvent(TableEvent.HTH)
+                                                .tableEvent(TableEvent.HTD)
                                                 .columnName("tran_amt")
                                                 .build())
                                         .columnPosition(6)
                                         .build(),
                                 TableConfig.builder()
                                         .tableConfigKey(TableConfigKey.builder()
-                                                .tableEvent(TableEvent.HTH)
+                                                .tableEvent(TableEvent.HTD)
                                                 .columnName("tran_crncy")
                                                 .build())
                                         .columnPosition(7)

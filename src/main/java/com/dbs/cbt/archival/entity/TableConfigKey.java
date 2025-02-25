@@ -12,6 +12,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class TableConfigKey {
     @Enumerated(EnumType.STRING)
     private TableEvent tableEvent;

@@ -7,11 +7,13 @@ import com.dbs.cbt.archival.service.ConfigService;
 import com.dbs.cbt.archival.service.ReaderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.io.IOException;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/archival/v1/")
@@ -20,6 +22,8 @@ import java.util.Optional;
 public class ArchivalInquiryController {
     private final ConfigService configService;
     private final ReaderService readerService;
+    @Value("${OUTPUT_PATH:output/}")
+    private String outputPath;
 
     @GetMapping("config")
     public ResponseEntity<Optional<MasterConfig>> getConfiguration(@RequestBody ConfigCriteria criteria) {
@@ -32,8 +36,8 @@ public class ArchivalInquiryController {
         return ResponseEntity.ok(configService.updateConfig(config));
     }
     @GetMapping("record")
-    public ResponseEntity<List<String>> getRecords(@RequestBody RecordRequest request) {
+    public ResponseEntity<Boolean> getRecords(@RequestBody RecordRequest request, @RequestHeader("correlation-id") UUID requestUUID) throws IOException {
         log.info("request is {}",request);
-        return ResponseEntity.ok(readerService.readRecord(request));
+        return ResponseEntity.ok(readerService.readRecord(request,outputPath + requestUUID.toString() + "_" + request.getFileName()));
     }
 }

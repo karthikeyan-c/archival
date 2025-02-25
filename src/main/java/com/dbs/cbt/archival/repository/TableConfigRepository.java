@@ -19,4 +19,14 @@ public interface TableConfigRepository extends JpaRepository<TableConfig, TableE
             """, nativeQuery = true)
     List<TableConfig> fetchColumnDetails(@Param("businessEvent") String businessEvent,
                                          @Param("tableEvent") String tableEvent);
+    @Query(value = """
+            select *
+            from archival.table_config
+            where business_event = :businessEvent
+            and table_event = :tableEvent
+            and column_name = :columnName
+            """, nativeQuery = true)
+    List<TableConfig> fetchOneColumnDetails(@Param("businessEvent") String businessEvent,
+                                            @Param("tableEvent") String tableEvent,
+                                            @Param("columnName") String columnName);
 }
